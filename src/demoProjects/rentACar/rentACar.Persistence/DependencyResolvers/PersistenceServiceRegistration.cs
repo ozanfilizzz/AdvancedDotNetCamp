@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace rentACar.Persistence
+namespace rentACar.Persistence.DependencyResolvers
 {
     public static class PersistenceServiceRegistration
     {
