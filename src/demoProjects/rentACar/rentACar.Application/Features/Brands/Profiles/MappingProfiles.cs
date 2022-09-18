@@ -1,11 +1,9 @@
 ﻿using AutoMapper;
+using Core.Persistence.Paging;
 using rentACar.Application.Features.Brands.Commands.CreateBrands;
+using rentACar.Application.Features.Brands.Dtos;
+using rentACar.Application.Features.Brands.Queries.GetListBrand;
 using rentACar.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace rentACar.Application.Features.Brands.Profiles
 {
@@ -14,15 +12,20 @@ namespace rentACar.Application.Features.Brands.Profiles
         public MappingProfiles()
         {
             CreateBrandCommandMaps();
+            GetListBrandQueryMaps();
         }
-
-
 
 
         protected virtual void CreateBrandCommandMaps()
         {
             CreateMap<Brand, CreateBrandCommandRequest>().ReverseMap();
             CreateMap<Brand, CreatedBrandCommandResponse>().ReverseMap();
+        }
+
+        protected virtual void GetListBrandQueryMaps()
+        {
+            CreateMap<IPaginate<Brand>, GetListBrandQueryResponse>().ReverseMap();
+            CreateMap<Brand, BrandListDto>().ReverseMap();
         }
     }
 }
