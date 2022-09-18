@@ -2,6 +2,7 @@
 using Core.Persistence.Paging;
 using rentACar.Application.Features.Brands.Commands.CreateBrands;
 using rentACar.Application.Features.Brands.Dtos;
+using rentACar.Application.Features.Brands.Queries.GetByIdBrand;
 using rentACar.Application.Features.Brands.Queries.GetListBrand;
 using rentACar.Domain.Entities;
 
@@ -13,6 +14,7 @@ namespace rentACar.Application.Features.Brands.Profiles
         {
             CreateBrandCommandMaps();
             GetListBrandQueryMaps();
+            GetByIdBrandQueryMaps();
         }
 
 
@@ -26,6 +28,11 @@ namespace rentACar.Application.Features.Brands.Profiles
         {
             CreateMap<IPaginate<Brand>, GetListBrandQueryResponse>().ReverseMap();
             CreateMap<Brand, BrandListDto>().ReverseMap();
+        }
+
+        protected virtual void GetByIdBrandQueryMaps()
+        {
+            CreateMap<Brand, GetByIdBrandQueryResponse>().ReverseMap();
         }
     }
 }
