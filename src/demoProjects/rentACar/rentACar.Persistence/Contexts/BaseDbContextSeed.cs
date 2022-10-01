@@ -17,6 +17,13 @@ namespace rentACar.Persistence.Contexts
 
                 await baseContext.SaveChangesAsync();
             }
+
+            if (!baseContext.Models.Any())
+            {
+                baseContext.Models.AddRange(GetPreconfiguredModels());
+
+                await baseContext.SaveChangesAsync();
+            }
         }
 
         private static IEnumerable<Brand> GetPreconfiguredBrands()
@@ -31,6 +38,30 @@ namespace rentACar.Persistence.Contexts
                {
                   Name = "BMW"
                }
+            };
+        }
+
+        private static IEnumerable<Model> GetPreconfiguredModels()
+        {
+            return new List<Model>()
+            {
+                new Model()
+                {
+                    BrandId = 1,
+                    Name = "SClass Series",
+                    DailyPrice = 5000,
+                    ImageUrl = "tempUrl",
+
+                },
+                new Model()
+                {
+                    BrandId = 2,
+                    Name = "E1 Series",
+                    DailyPrice = 2500,
+                    ImageUrl = "tempUrl",
+
+                }
+               
             };
         }
 
