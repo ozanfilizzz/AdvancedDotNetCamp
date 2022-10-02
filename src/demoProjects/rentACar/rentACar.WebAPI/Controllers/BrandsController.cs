@@ -10,8 +10,6 @@ namespace rentACar.WebAPI.Controllers
     [ApiController]
     public class BrandsController : BaseClientController
     {
-
-
         [HttpPost]
         public async Task<IActionResult> Add([FromBody] CreateBrandCommandRequest request)
         {

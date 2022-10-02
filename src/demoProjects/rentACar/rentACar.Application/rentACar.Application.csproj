@@ -7,6 +7,15 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Features\Brands\Constants\**" />
+	  <Compile Remove="Features\Brands\Models\**" />
+	  <EmbeddedResource Remove="Features\Brands\Constants\**" />
+	  <EmbeddedResource Remove="Features\Brands\Models\**" />
+	  <None Remove="Features\Brands\Constants\**" />
+	  <None Remove="Features\Brands\Models\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="Features\Brands\Queries\GetByIdBrand\GetByIdBrandQueryRequest.css" />
 	</ItemGroup>
 
@@ -23,8 +32,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="Features\Brands\Constants\" />
-		<Folder Include="Features\Brands\Models\" />
+		<Folder Include="Features\Models\Commands\" />
+		<Folder Include="Features\Models\Rules\" />
 	</ItemGroup>
 
 </Project>

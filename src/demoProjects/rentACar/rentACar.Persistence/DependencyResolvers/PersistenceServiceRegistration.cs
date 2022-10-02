@@ -21,6 +21,7 @@ namespace rentACar.Persistence.DependencyResolvers
                                                      options.UseSqlServer(
                                                          configuration.GetConnectionString("RentACarConnectionString"), b => b.MigrationsAssembly(typeof(BaseDbContext).Assembly.FullName)), ServiceLifetime.Singleton);
             services.AddScoped<IBrandRepository, BrandRepository>();
+            services.AddScoped<IModelRepository, ModelRepository>();
 
             return services;
         }
